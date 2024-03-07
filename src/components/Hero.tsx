@@ -108,7 +108,6 @@ const Hero = () => {
                             style={{
                                 transform: 'scale(1.7)',
                                 margin: '0 -120px',
-                                animation: 'floating 3s ease-in-out infinite',
                             }}
                         />
                     </motion.div>

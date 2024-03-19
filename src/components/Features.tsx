@@ -1,72 +1,34 @@
-import styled from "styled-components";
-
-const FeaturesContainer = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-`;
-
-const Container = styled.div`
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-`;
-
-const TextContainer = styled.div`
-  width: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-`;
-
-const Text = styled.p`
-  font-size: 80px;
-  margin: 25px 0;
-`;
-
-const Span = styled.span`
-  /* Add styles for span if needed */
-`;
-const StyledContainer = styled.div`
-  width: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-`;
-
-const StyledText = styled.span`
-  color: #848484;
-`;
-
 const Features = () => {
-  return (
-    <FeaturesContainer>
-      <Container>
-        <TextContainer>
-          <div style={{ lineHeight: "4.15rem" }}>
-            <Text>
-              Our <Span>Products</Span>
-            </Text>
-            <Text>Features</Text>
-          </div>
-        </TextContainer>
-        <StyledContainer>
-          <div className="flex flex-col">
-            <StyledText>
-              Revitalize your skin with our herbal-packed serum. Hydrate,
-              soften,
-            </StyledText>
-            <StyledText>
-              and diminish fine lines. Unlock youthful radiance naturally.
-            </StyledText>
-            <StyledText>Experience suppleness and vitality with</StyledText>
-            <StyledText>each application.</StyledText>
-          </div>
-        </StyledContainer>
-      </Container>
-    </FeaturesContainer>
-  );
+    return (
+        <div className="container">
+            <div className="flex justify-center items-center">
+                <div className="w-1/2 flex justify-start items-center">
+                    <div style={{ lineHeight: "4.15rem", margin: "0 5em" }}>
+                        <p className="text-6xl my-6">
+                            Our <span className="text-pink-600">Products</span>
+                        </p>
+                        <p className="text-6xl my-6">Features</p>
+                    </div>
+                </div>
+                <div className="w-1/2 flex justify-center items-center">
+                    <div className="flex flex-col">
+                        <span className="text-gray-600">
+                            Revitalize your skin with our herbal-packed serum.
+                            Hydrate, soften,
+                        </span>
+                        <span className="text-gray-600">
+                            and diminish fine lines. Unlock youthful radiance
+                            naturally.
+                        </span>
+                        <span className="text-gray-600">
+                            Experience suppleness and vitality with
+                        </span>
+                        <span className="text-gray-600">each application.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    );
 };
 
 export default Features;

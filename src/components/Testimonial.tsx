@@ -4,7 +4,14 @@ import Habibi from "../img/habibi.png";
 import Male from "../img/male-memoji.png";
 import Female from "../img/female-memoji.png";
 
-const TestimonialCard = ({ text, author, image }) => {
+interface TestimonialData {
+    text: string;
+    author: string;
+    image: string;
+    rating: number;
+}
+
+const TestimonialCard: React.FC<TestimonialData> = (props) => {
     return (
         <motion.div
             initial={{ opacity: 0, y: -20 }}
@@ -17,8 +24,8 @@ const TestimonialCard = ({ text, author, image }) => {
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ delay: 0.5 }}
-                    src={image}
-                    alt={author}
+                    src={props.image}
+                    alt={props.author}
                     className="rounded-full w-36 h-36 object-cover"
                 />
             </div>
@@ -28,48 +35,47 @@ const TestimonialCard = ({ text, author, image }) => {
                 transition={{ delay: 0.7 }}
                 className="mt-2"
             >
-                {text}
+                {props.text}
             </motion.p>
-            <motion.p
+            <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.9 }}
-                className="text-gray-500 mt-2"
+                className="flex space-x-1 mt-2"
             >
-                {author}
-            </motion.p>
-            <div className="flex space-x-1">
-                <CiStar className="text-[#E42D6B]" />
-                <CiStar className="text-[#E42D6B]" />
-                <CiStar className="text-[#E42D6B]" />
-                <CiStar className="text-[#E42D6B]" />
-                <CiStar className="text-[#E42D6B]" />
-            </div>
+                {[...Array(props.rating).keys()].map((index) => (
+                    <CiStar key={index} className="text-[#E42D6B]" />
+                ))}
+            </motion.div>
         </motion.div>
     );
 };
 
-const Testimonial = () => {
-    const testimonial = [
+const Testimonial: React.FC = () => {
+    const testimonial: TestimonialData[] = [
         {
             text: "Fusce sed pharetra nunc. Donec vel consectetur lorem. Vestibulum sagittis elit vitae libero vehicula, sit amet faucibus ex commodo.",
             author: "John Doe",
-            image: Habibi
+            image: Habibi,
+            rating: 5
         },
         {
             text: "Fusce sed pharetra nunc. Donec vel consectetur lorem. Vestibulum sagittis elit vitae libero vehicula, sit amet faucibus ex commodo.",
             author: "Jane Doe",
-            image: Female
+            image: Female,
+            rating: 4
         },
         {
             text: "Fusce sed pharetra nunc. Donec vel consectetur lorem. Vestibulum sagittis elit vitae libero vehicula, sit amet faucibus ex commodo.",
             author: "Alice Smith",
-            image: Male
+            image: Male,
+            rating: 3
         },
         {
             text: "Fusce sed pharetra nunc. Donec vel consectetur lorem. Vestibulum sagittis elit vitae libero vehicula, sit amet faucibus ex commodo.",
             author: "Alice Smith",
-            image: Habibi
+            image: Habibi,
+            rating: 5
         }
     ];
 

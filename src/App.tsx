@@ -1,25 +1,16 @@
-import Brands from "./components/Brands";
-import Contact from "./components/Contact";
-import Features from "./components/Features";
-import Footer from "./components/Footer";
-import Hero from "./components/Hero";
-import Navbar from "./components/Navbar";
-import Products from "./components/Products";
-import Shop from "./components/Shop";
-import Testimonial from "./components/Testimonial";
-
+import Announcement from "./vendors/Announcement";
+import Arrivals from "./vendors/Arrivals";
+import Banner from "./vendors/Banner";
+import Brands from "./vendors/Brands";
+import Header from "./vendors/Header";
 const App = () => {
     return (
         <main>
-            <Navbar />
-            <Hero />
-            <Features />
-            <Products />
+            <Announcement />
+            <Header />
+            <Banner />
             <Brands />
-            <Shop />
-            <Testimonial />
-            <Contact />
-            <Footer />
+            <Arrivals />
         </main>
     );
 };

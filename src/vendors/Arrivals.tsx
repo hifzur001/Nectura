@@ -20,7 +20,8 @@ const StyledCard = styled.div`
 
     img {
         max-width: 100%;
-        height: auto;
+        aspect-ratio: 1 / 1; /* Set aspect ratio to 1:1 */
+        object-fit: cover; /* Maintain aspect ratio */
     }
 
     h3 {
